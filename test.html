@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>João Severo - Portfolio</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+            .collapsible-content {
+                max-height: 0; /* Start collapsed */
+                overflow: hidden; /* Hide overflow */
+                transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+                opacity: 0; /* Start as fully transparent */
+                padding: 0px; /* Add some padding */
+                border-radius: 5px; /* Optional: Rounded corners */
+            }
+
+            .collapsible-arrow {
+                display: inline-block;
+                cursor: pointer; /* Pointer on hover */
+                font-size: 24px; /* Size of the arrow */
+                color: #00adb5; /* Arrow color */
+                transition: transform 0.3s ease; /* Smooth rotation */
+            }
+
+            .collapsible-arrow:hover {
+                color: #008a8f; /* Darker on hover */
+            }
+
+            .collapsed {
+                transform: rotate(0deg); /* No rotation when collapsed */
+            }
+
+            .expanded {
+                transform: rotate(180deg); /* Rotate when expanded */
+            }
+
+            /* Centering styles */
+            .arrow-container {
+                display: flex; /* Enable flexbox */
+                justify-content: center; /* Center horizontally */
+                margin-top: 10px; /* Margin on top */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <section id="header">
+                <h2>João Severo</h2>
+                <p>
+                    Technical Lead | Data Scientist | AI & Backend Development
+                    Specialist
+                </p>
+            </section>
+            <section id="skills">
+                <h1>Skills</h1>
+                <br />
+
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <ul>
+                        <li>
+                            <strong>Agile Methodologies</strong>: Experience
+                            working in Agile environments, managing client
+                            interactions and feature deliveries.
+                        </li>
+                        <li>
+                            <strong>Technical Project Leadership</strong>: Led
+                            technical projects, ensuring timely delivery and
+                            quality.
+                        </li>
+                        <li>
+                            <strong>Team Leadership</strong>: Currently managing
+                            a team as a Technical Lead, focusing on
+                            collaboration and deadline management.
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapsible-content">
+                    <div class="skill-category">
+                        <h3>Data Science & Machine Learning</h3>
+                        <ul>
+                            <li>
+                                <strong>Natural Language Processing</strong>:
+                                Implemented NLP techniques for various AI
+                                applications and research projects.
+                            </li>
+                            <li>
+                                <strong>Machine Learning</strong>: Developed
+                                machine learning models for predictive
+                                analytics.
+                            </li>
+                            <li>
+                                <strong>Data Analysis</strong>: Conducted
+                                comprehensive data analysis to derive insights.
+                            </li>
+                            <li>
+                                <strong>Data Modeling</strong>: Designed data
+                                models to support application requirements.
+                            </li>
+                            <li>
+                                <strong>Image Recognition</strong>: Worked with
+                                Optical Character Recognition (OCR) and model
+                                fine-tuning to improve document processing.
+                            </li>
+                            <li>
+                                <strong>Research Skills</strong>: Strong
+                                background in conducting research for AI
+                                applications.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="arrow-container">
+                    <div class="collapsible-arrow collapsed">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            document.querySelectorAll(".collapsible-arrow").forEach((arrow) => {
+                arrow.addEventListener("click", () => {
+                    const content = arrow.parentNode.previousElementSibling; // Get the corresponding content div
+                    if (content.style.maxHeight) {
+                        // If the content is already expanded
+                        content.style.maxHeight = null; // Collapse it
+                        arrow.classList.remove("expanded");
+                        arrow.classList.add("collapsed");
+                        content.style.opacity = "0"; // Make it fully transparent
+                    } else {
+                        // If the content is collapsed
+                        content.style.maxHeight = content.scrollHeight + "px"; // Expand it
+                        arrow.classList.remove("collapsed");
+                        arrow.classList.add("expanded");
+                        content.style.opacity = "1"; // Make it fully visible
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

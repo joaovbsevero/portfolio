@@ -18,7 +18,7 @@ body {
     flex-direction: column; /* Stack items vertically */
     justify-content: space-between; /* Space items to push contact info to the bottom */
     width: 250px;
-    background-color: #333;
+    background-color: #0c1d35;
     color: #f4f4f9;
     height: 100vh;
     padding: 20px;
@@ -98,6 +98,13 @@ body {
     margin-left: auto; /* Center content */
 }
 
+.banner-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any inline spacing */
+    margin: 0 auto; /* Center the image */
+}
+
 header {
     text-align: center;
     padding: 20px 0;
@@ -141,6 +148,11 @@ section p {
     color: #555;
 }
 
+.labels {
+    font-size: 0.78rem;
+    color: black;
+}
+
 /* Skills Section Styles */
 .skill-category {
     margin-bottom: 30px; /* Space between categories */
@@ -162,6 +174,41 @@ section p {
     line-height: 1.5; /* Line height for better readability */
 }
 
+.collapsible-content {
+    max-height: 0; /* Start collapsed */
+    overflow: hidden; /* Hide overflow */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Start as fully transparent */
+    padding: 0px; /* Add some padding */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.collapsible-arrow {
+    display: inline-block;
+    cursor: pointer; /* Pointer on hover */
+    font-size: 24px; /* Size of the arrow */
+    color: #00adb5; /* Arrow color */
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.collapsible-arrow:hover {
+    color: #008a8f; /* Darker on hover */
+}
+
+.collapsed {
+    transform: rotate(0deg); /* No rotation when collapsed */
+}
+
+.expanded {
+    transform: rotate(180deg); /* Rotate when expanded */
+}
+
+/* Centering styles */
+.arrow-container {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    margin-top: 10px; /* Margin on top */
+}
 
 /* Floating Button Styling */
 .floating-button {
